@@ -12,7 +12,7 @@ CONFIG_TARGET=/opt/retropie/configs/all/retroarch-joypads
 
 
 if [[ ! -f /etc/udev/rules.d/10-local.rules ]]; then 
-then echo "Creating rule /etc/udev/rules.d/10-local.rules"
+echo "Creating rule /etc/udev/rules.d/10-local.rules"
 
 cat >> /etc/udev/rules.d/10-local.rules <<EOL
 # Add more 8bitdo Joystick ID's to this config file
@@ -21,6 +21,7 @@ cat >> /etc/udev/rules.d/10-local.rules <<EOL
 SUBSYSTEM=="input", ATTRS{name}=="8Bitdo SNES30 GamePad Joystick", MODE="0666", ENV{ID_INPUT_JOYSTICK}="1"
 
 EOL
+fi
 
 # Time to copy over a known working 8bitdo config file!
 
